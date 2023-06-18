@@ -6,7 +6,10 @@ export default function Home() {
     () => {
       function getRandomVerse() {
         // Generate a random number between 1 and 6237
-        const randomVerse = Math.floor(Math.random() * 6237);
+        let randomVerse = Math.floor(Math.random() * 6237);
+        while (randomVerse === 0) {
+          randomVerse = Math.floor(Math.random() * 6237);
+        }
 
         // Create the URL for the API
         const url = `https://api.alquran.cloud/v1/ayah/${randomVerse}/en.asad`;
